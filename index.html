@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Video Background (plays without audio) -->
+    <video id="bg-video" autoplay loop muted>
+        <source src="background-video.mp4" type="video/mp4">
+        <source src="background-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Audio (MP3 file) with autoplay and loop, but only starts after user interaction -->
+    <audio id="background-audio" loop>
+        <source src="background-music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Countdown Content -->
+    <div class="content" onclick="playAudio()">
+        <h1>Days Remaining Until My Love's Birthday</h1>
+        <div id="countdown-timer">
+            <div id="days">Loading...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Play audio when the user clicks anywhere on the page
+        function playAudio() {
+            const audio = document.getElementById('background-audio');
+            if (audio.paused) {
+                audio.play();
+            }
+        }
+    </script>
+</body>
+</html>
